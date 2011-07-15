@@ -1,0 +1,46 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        
+        <title>{% block title %}{% endblock title %}</title>
+        
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="shortcut icon" href="{{STATIC_URL}}$(main_app_name)/images/favicon.ico">
+        <link rel="apple-touch-icon" href="{{STATIC_URL}}$(main_app_name)/images/apple-touch-icon.png">
+        
+        <link rel="stylesheet" href="{{STATIC_URL}}$(main_app_name)/css/reset.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}$(main_app_name)/css/utils.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}$(main_app_name)/css/main.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}$(main_app_name)/css/mobile.css">
+        <link rel="stylesheet" href="{{STATIC_URL}}$(main_app_name)/css/print.css">
+        
+        <script src="{{STATIC_URL}}$(main_app_name)/js/libs/modernizr-1.7.min.js"></script>
+        {% block extra_head %}{% endblock extra_head %}
+    </head>
+    <body {% block body_attrs %}{% endblock body_attrs %}>
+        {% block content %}{% endblock content %}
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+        <script>!window.jQuery && document.write(unescape('%3Cscript src="{{STATIC_URL}}$(main_app_name)/js/libs/jquery-1.5.1.js"%3E%3C/script%3E'))</script>
+        <script src="{{STATIC_URL}}$(main_app_name)/js/plugins.js"></script>
+        <!--[if lt IE 7 ]>
+        <script src="{{STATIC_URL}}$(main_app_name)/js/libs/dd_belatedpng.js"></script>
+        <script> DD_belatedPNG.fix('img, .png_bg');</script>
+        <![endif]-->
+        <script>
+            // TODO: Change UA-XXXXX-X to be your site's ID
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
