@@ -1,0 +1,9 @@
+recursive-include doc_src *
+recursive-include docs *
+
+recursive-include consulting/media *
+recursive-include consulting/templates *
+
+include LICENSE
+include README
+include *.txt
