@@ -13,5 +13,9 @@ class TopicAdmin(admin.ModelAdmin):
 
 admin.site.register(Topic, TopicAdmin)
 
-admin.site.register(Question)
+class QuestionAdmin(admin.ModelAdmin):
+    readonly_fields = ('date_added', 'date_answered')
+
+admin.site.register(Question, QuestionAdmin)
+
 admin.site.register(Role)

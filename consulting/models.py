@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext, ugettext_lazy as _
+from datetime import datetime
 
 
 class Role(models.Model):
@@ -71,3 +72,9 @@ class Question(models.Model):
     @property
     def answered(self):
         return self.date_answered is not None
+
+    def save(self, *args, **kwds):
+        if self.answer:
+            self.date_answered = datetime.now()
+
+        super(Question, self).save(*args, **kwds)
