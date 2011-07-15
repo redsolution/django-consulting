@@ -1,0 +1,18 @@
+{% extends "consulting/base.html" %}
+
+{% block content %}
+<h1>{{ object }}</h1>
+<p>Questions:</p>
+{% for question in object.question_set.published %}
+<div class="question">
+    {{ question.text }}
+</div>
+{% endfor %}
+
+<form action="." method="post">
+    {% include "consulting/form_include.html" %}
+    <p><input type="submit" /></p>
+</form>
+
+
+{% endblock %}
